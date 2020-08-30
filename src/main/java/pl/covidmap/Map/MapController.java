@@ -1,13 +1,12 @@
-package pl.covidmap;
+package pl.covidmap.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import pl.covidmap.Data.Covid19Parser;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class MapController {
@@ -18,7 +17,7 @@ public class MapController {
         this.covid19Parser = covid19Parser;
     }
 
-    @GetMapping
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String getMap(Model model) throws IOException {
         model.addAttribute("points", covid19Parser.getCovidData());
         return "map";
