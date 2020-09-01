@@ -29,7 +29,7 @@ public class DataParser {
 
         List<Point> points = new ArrayList<>();
 
-//        StringReader stringReader = new StringReader(getData.getDataMethod(urls.getURL_BASIC()));
+
         StringReader stringReader = new StringReader(getData.getDataMethod(urls.getUrlAdvanced()));
 
         CSVParser parse = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(stringReader);
@@ -43,7 +43,24 @@ public class DataParser {
                 double lon = Double.parseDouble(lonString);
 
 //            String text = strings.get(days.getYesterday().format(DateTimeFormatter.ofPattern("M/dd/yy")));
-                String text = strings.get("Country_Region").replace("'", "") + "<br>" + "Confirmed: " + strings.get("Confirmed");
+                String text = strings.get("Combined_Key").replace("'", "") +
+                        "<br>" +
+                        "Last update: " + strings.get("Last_Update") +
+                        "<br>" +
+                        "Confirmed: " + strings.get("Confirmed") +
+                        "<br>" +
+                        "Deaths: " + strings.get("Deaths") +
+                        "<br>" +
+                        "Recovered: " + strings.get("Recovered") +
+                        "<br>" +
+                        "Active cases: " + strings.get("Active") +
+                        "<br>" +
+                        "New cases since last update: " +
+                        "<br>" +
+                        "Cases per 100,000 persons: " + strings.get("Incidence_Rate") +
+                        "<br>" +
+                        "Number recorded deaths / Number cases (%): " + strings.get("Case-Fatality_Ratio")
+                        ;
 
                 points.add(new Point(lat, lon, text));
             }
