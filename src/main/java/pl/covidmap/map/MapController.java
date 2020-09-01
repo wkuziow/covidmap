@@ -1,10 +1,10 @@
-package pl.covidmap.Map;
+package pl.covidmap.map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.covidmap.Data.Covid19Parser;
+import pl.covidmap.data.Covid19Parser;
 
 import java.io.IOException;
 

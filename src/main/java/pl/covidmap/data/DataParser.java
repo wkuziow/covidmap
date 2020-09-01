@@ -1,15 +1,13 @@
-package pl.covidmap.Data;
+package pl.covidmap.data;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.stereotype.Service;
-import pl.covidmap.Point.Point;
+import pl.covidmap.point.Point;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 

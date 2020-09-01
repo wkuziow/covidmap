@@ -1,4 +1,4 @@
-package pl.covidmap.Point;
+package pl.covidmap.point;
 
 public class Point {
 
